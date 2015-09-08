@@ -11,19 +11,7 @@ class AutocompleteList extends React.Component {
 		this.props.onChange(values);
 	}
 
-	handleAutocompleteChange(value) {
-		this.props.values.push(value);
-		this.props.onChange(this.props.values);
-
-		// this.refs.autocomplete.clear();
-	}
-
 	render() {
-		// console.log(this.props.values);
-		// let options = this.props.options.filter((option) => {
-		// 	return !this.props.values.contains(option);
-		// });
-
 		return (
 			<div className="hire-forms-autocomplete-list">
 				<List
@@ -32,7 +20,9 @@ class AutocompleteList extends React.Component {
 					values={this.props.values} />
 				<Autocomplete
 					async={this.props.async}
-					onChange={this.handleAutocompleteChange.bind(this)}
+					onChange={(value) =>
+						this.props.onChange(this.props.values.concat(value))
+					}
 					options={this.props.options}
 					placeholder={this.props.placeholder}
 					ref="autocomplete" />

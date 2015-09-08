@@ -95,20 +95,9 @@ var AutocompleteList = (function (_React$Component) {
 			this.props.onChange(values);
 		}
 	}, {
-		key: "handleAutocompleteChange",
-		value: function handleAutocompleteChange(value) {
-			this.props.values.push(value);
-			this.props.onChange(this.props.values);
-
-			// this.refs.autocomplete.clear();
-		}
-	}, {
 		key: "render",
 		value: function render() {
-			// console.log(this.props.values);
-			// let options = this.props.options.filter((option) => {
-			// 	return !this.props.values.contains(option);
-			// });
+			var _this = this;
 
 			return _react2["default"].createElement(
 				"div",
@@ -119,7 +108,9 @@ var AutocompleteList = (function (_React$Component) {
 					values: this.props.values }),
 				_react2["default"].createElement(_hireFormsAutocomplete2["default"], {
 					async: this.props.async,
-					onChange: this.handleAutocompleteChange.bind(this),
+					onChange: function (value) {
+						return _this.props.onChange(_this.props.values.concat(value));
+					},
 					options: this.props.options,
 					placeholder: this.props.placeholder,
 					ref: "autocomplete" })
@@ -460,6 +451,7 @@ module.exports = exports["default"];
 				});
 			}
 		}, {}], 5: [function (_dereq_, module, exports) {
+			// Rebuild build
 			"use strict";
 
 			Object.defineProperty(exports, "__esModule", {
