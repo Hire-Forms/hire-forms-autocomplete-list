@@ -1,0 +1,11 @@
+.hire-forms-list-item:hover {
+	background: yellow;
+}
+
+.hire-forms-option.highlight {
+	background: lightblue;
+}
+
+.hire-forms-option span.highlight {
+	font-weight: bold;
+}
