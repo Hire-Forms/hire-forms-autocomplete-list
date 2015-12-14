@@ -15,8 +15,9 @@ class AutocompleteList extends React.Component {
 		return (
 			<div className="hire-forms-autocomplete-list">
 				<List
-					editable={false}
+					mutable={true}
 					onChange={this.handleEditableListChange.bind(this)}
+					ordered={this.props.ordered}
 					values={this.props.values} />
 				<Autocomplete
 					async={this.props.async}
