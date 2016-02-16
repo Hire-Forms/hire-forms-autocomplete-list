@@ -33,8 +33,8 @@
     "watchify": "^3.2.2"
   },
   "dependencies": {
-    "hire-forms-autocomplete": "^1.0.1",
-    "hire-forms-list": "^2.0.0",
-    "hire-forms-prop-types": "^2.0.1"
+    "hire-forms-autocomplete": "https://github.com/Hire-Forms/hire-forms-autocomplete.git#react-0.14",
+    "hire-forms-list": "https://github.com/Hire-Forms/hire-forms-list.git#react-0.14",
+    "hire-forms-prop-types": "https://github.com/Hire-Forms/hire-forms-prop-types.git#react-0.14"
   }
 }

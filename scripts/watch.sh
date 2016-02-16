@@ -5,6 +5,8 @@ node_modules/.bin/watchify src/index.jsx \
 	--extension=.jsx \
 	--external react \
 	--external immutable \
+	--external react-dom \
+	--external classnames \
 	--outfile 'derequire > build/index.js' \
 	--standalone HireFormsAutocompleteList \
 	--transform [ babelify --plugins object-assign ] \
