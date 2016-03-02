@@ -29,8 +29,11 @@
     "eslint-plugin-react": "^2.5.2",
     "hi-bump": "^1.1.1",
     "insert-css": "^0.2.0",
-    "react": "^0.13.3",
     "watchify": "^3.2.2"
+  },
+  "peerDependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
   },
   "dependencies": {
     "hire-forms-autocomplete": "https://github.com/Hire-Forms/hire-forms-autocomplete.git#react-0.14",
