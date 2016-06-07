@@ -19,23 +19,24 @@
   },
   "homepage": "https://github.com/Hire-Forms/hire-forms-autocomplete-list",
   "devDependencies": {
-    "babel-core": "^5.5.8",
-    "babel-eslint": "^3.1.15",
-    "babel-plugin-object-assign": "^1.1.0",
-    "babelify": "^6.1.2",
-    "brfs": "^1.4.1",
-    "browserify": "^12.0.1",
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "brfs": "^1.4.3",
+    "browserify": "^13.0.1",
     "derequire": "^2.0.3",
-    "eslint": "^0.23.0",
-    "eslint-plugin-react": "^2.5.2",
+    "eslint": "^2.11.1",
+    "eslint-plugin-react": "^5.1.1",
     "hi-bump": "^1.1.1",
     "insert-css": "^0.2.0",
-    "react": "^0.13.3",
-    "watchify": "^3.2.2"
+    "react": "^15.1.0",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
-    "hire-forms-autocomplete": "^1.0.1",
-    "hire-forms-list": "^2.0.0",
+    "hire-forms-autocomplete": "^2.0.0",
+    "hire-forms-list": "^3.0.0",
     "hire-forms-prop-types": "^2.0.1"
   }
 }

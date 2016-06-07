@@ -7,5 +7,5 @@ node_modules/.bin/watchify src/index.jsx \
 	--external immutable \
 	--outfile 'derequire > build/index.js' \
 	--standalone HireFormsAutocompleteList \
-	--transform [ babelify --plugins object-assign ] \
+	--transform [ babelify --presets [ es2015 react ] ] \
 	--verbose

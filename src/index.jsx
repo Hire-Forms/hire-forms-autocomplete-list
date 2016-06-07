@@ -1,10 +1,8 @@
 // TODO Fix filter options (remove values from options). Doesn't work, because AutoComplete has a cache for the async.
-import React from "react";
-
-import List from "hire-forms-list";
-import Autocomplete from "hire-forms-autocomplete";
-
-import {arrayOfKeyValueMaps} from "hire-forms-prop-types";
+import React, { PropTypes } from 'react';
+import List from 'hire-forms-list';
+import Autocomplete from 'hire-forms-autocomplete';
+import {arrayOfKeyValueMaps} from 'hire-forms-prop-types';
 
 class AutocompleteList extends React.Component {
 	handleEditableListChange(values) {
@@ -15,7 +13,7 @@ class AutocompleteList extends React.Component {
 		return (
 			<div className="hire-forms-autocomplete-list">
 				<List
-					mutable={true}
+					mutable
 					onChange={this.handleEditableListChange.bind(this)}
 					ordered={this.props.ordered}
 					values={this.props.values} />
@@ -38,11 +36,11 @@ AutocompleteList.defaultProps = {
 	values: []
 };
 AutocompleteList.propTypes = {
-	async: React.PropTypes.func,
-	onChange: React.PropTypes.func.isRequired,
+	async: PropTypes.func,
+	onChange: PropTypes.func.isRequired,
 	options: arrayOfKeyValueMaps,
-	ordered: React.PropTypes.bool,
-	placeholder: React.PropTypes.string,
+	ordered: PropTypes.bool,
+	placeholder: PropTypes.string,
 	values: arrayOfKeyValueMaps
 };
 
