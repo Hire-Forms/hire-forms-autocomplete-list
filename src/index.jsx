@@ -10,21 +10,29 @@ class AutocompleteList extends React.Component {
 	}
 
 	render() {
+		const autocomplete =
+			<Autocomplete
+				async={this.props.async}
+				onChange={(value) =>
+					this.props.onChange(this.props.values.concat(value))
+				}
+				options={this.props.options}
+				placeholder={this.props.placeholder}
+				ref="autocomplete"
+			/>
+
+		const list =
+			<List
+				mutable
+				onChange={this.handleEditableListChange.bind(this)}
+				ordered={this.props.ordered}
+				values={this.props.values}
+			/>
+
 		return (
 			<div className="hire-forms-autocomplete-list">
-				<List
-					mutable
-					onChange={this.handleEditableListChange.bind(this)}
-					ordered={this.props.ordered}
-					values={this.props.values} />
-				<Autocomplete
-					async={this.props.async}
-					onChange={(value) =>
-						this.props.onChange(this.props.values.concat(value))
-					}
-					options={this.props.options}
-					placeholder={this.props.placeholder}
-					ref="autocomplete" />
+				{this.props.renderListBeforeAutocomplete ? list : autocomplete}
+				{this.props.renderListBeforeAutocomplete ? autocomplete : list}
 			</div>
 		);
 	}
@@ -33,14 +41,17 @@ class AutocompleteList extends React.Component {
 AutocompleteList.defaultProps = {
 	options: [],
 	ordered: false,
+	renderListBeforeAutocomplete: false,
 	values: []
 };
+
 AutocompleteList.propTypes = {
 	async: PropTypes.func,
 	onChange: PropTypes.func.isRequired,
 	options: arrayOfKeyValueMaps,
 	ordered: PropTypes.bool,
 	placeholder: PropTypes.string,
+	renderListBeforeAutocomplete: PropTypes.bool,
 	values: arrayOfKeyValueMaps
 };
 

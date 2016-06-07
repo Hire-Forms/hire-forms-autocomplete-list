@@ -1651,22 +1651,28 @@ var AutocompleteList = function (_React$Component) {
 		value: function render() {
 			var _this2 = this;
 
+			var autocomplete = _react2.default.createElement(_hireFormsAutocomplete2.default, {
+				async: this.props.async,
+				onChange: function onChange(value) {
+					return _this2.props.onChange(_this2.props.values.concat(value));
+				},
+				options: this.props.options,
+				placeholder: this.props.placeholder,
+				ref: 'autocomplete'
+			});
+
+			var list = _react2.default.createElement(_hireFormsList2.default, {
+				mutable: true,
+				onChange: this.handleEditableListChange.bind(this),
+				ordered: this.props.ordered,
+				values: this.props.values
+			});
+
 			return _react2.default.createElement(
 				'div',
 				{ className: 'hire-forms-autocomplete-list' },
-				_react2.default.createElement(_hireFormsList2.default, {
-					mutable: true,
-					onChange: this.handleEditableListChange.bind(this),
-					ordered: this.props.ordered,
-					values: this.props.values }),
-				_react2.default.createElement(_hireFormsAutocomplete2.default, {
-					async: this.props.async,
-					onChange: function onChange(value) {
-						return _this2.props.onChange(_this2.props.values.concat(value));
-					},
-					options: this.props.options,
-					placeholder: this.props.placeholder,
-					ref: 'autocomplete' })
+				this.props.renderListBeforeAutocomplete ? list : autocomplete,
+				this.props.renderListBeforeAutocomplete ? autocomplete : list
 			);
 		}
 	}]);
@@ -1677,14 +1683,17 @@ var AutocompleteList = function (_React$Component) {
 AutocompleteList.defaultProps = {
 	options: [],
 	ordered: false,
+	renderListBeforeAutocomplete: false,
 	values: []
 };
+
 AutocompleteList.propTypes = {
 	async: _react.PropTypes.func,
 	onChange: _react.PropTypes.func.isRequired,
 	options: _hireFormsPropTypes.arrayOfKeyValueMaps,
 	ordered: _react.PropTypes.bool,
 	placeholder: _react.PropTypes.string,
+	renderListBeforeAutocomplete: _react.PropTypes.bool,
 	values: _hireFormsPropTypes.arrayOfKeyValueMaps
 };
 
