@@ -1629,7 +1629,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // TODO Fix filter options (remove values from options). Doesn't work, because AutoComplete has a cache for the async.
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // TODO Fix filter options (remove values from options).
+// Doesn't work, because AutoComplete has a cache for the async.
 
 
 var AutocompleteList = function (_React$Component) {
@@ -1642,11 +1643,6 @@ var AutocompleteList = function (_React$Component) {
 	}
 
 	_createClass(AutocompleteList, [{
-		key: 'handleEditableListChange',
-		value: function handleEditableListChange(values) {
-			this.props.onChange(values);
-		}
-	}, {
 		key: 'render',
 		value: function render() {
 			var _this2 = this;
@@ -1663,7 +1659,9 @@ var AutocompleteList = function (_React$Component) {
 
 			var list = _react2.default.createElement(_hireFormsList2.default, {
 				mutable: true,
-				onChange: this.handleEditableListChange.bind(this),
+				onChange: function onChange(values) {
+					return _this2.props.onChange(values);
+				},
 				ordered: this.props.ordered,
 				values: this.props.values
 			});
