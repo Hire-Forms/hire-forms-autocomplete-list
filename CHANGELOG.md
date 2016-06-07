@@ -1,3 +1,6 @@
+### v2.0.0	(2016/6/7 15:42)
+
+
 ### v1.0.4	(2016/6/7 15:41)
 * Fix lint errors
 * Use airbnb config
