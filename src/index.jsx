@@ -9,22 +9,19 @@ class AutocompleteList extends React.Component {
 	render() {
 		const autocomplete = (
 			<Autocomplete
-				async={this.props.async}
+				{...this.props}
 				onChange={(value) =>
 					this.props.onChange(this.props.values.concat(value))
 				}
-				options={this.props.options}
-				placeholder={this.props.placeholder}
 				ref="autocomplete"
 			/>
 		);
 
 		const list = (
 			<List
+				{...this.props}
 				mutable
 				onChange={(values) => this.props.onChange(values)}
-				ordered={this.props.ordered}
-				values={this.props.values}
 			/>
 		);
 
