@@ -36,8 +36,8 @@
     "react-dom": "^0.14.7"
   },
   "dependencies": {
-    "hire-forms-autocomplete": "https://github.com/Hire-Forms/hire-forms-autocomplete.git#react-0.14",
-    "hire-forms-list": "https://github.com/Hire-Forms/hire-forms-list.git#react-0.14",
-    "hire-forms-prop-types": "https://github.com/Hire-Forms/hire-forms-prop-types.git#react-0.14"
+    "hire-forms-autocomplete": "git+https://github.com/Hire-Forms/hire-forms-autocomplete.git#react-0.14",
+    "hire-forms-list": "git+https://github.com/Hire-Forms/hire-forms-list.git#react-0.14",
+    "hire-forms-prop-types": "git+https://github.com/Hire-Forms/hire-forms-prop-types.git#react-0.14"
   }
 }
