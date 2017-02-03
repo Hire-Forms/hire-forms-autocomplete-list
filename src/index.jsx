@@ -5,34 +5,31 @@ import List from 'hire-forms-list';
 import Autocomplete from 'hire-forms-autocomplete';
 import { arrayOfKeyValueMaps } from 'hire-forms-prop-types';
 
-class AutocompleteList extends React.Component {
-	render() {
-		const autocomplete = (
-			<Autocomplete
-				{...this.props}
-				onChange={(value) =>
-					this.props.onChange(this.props.values.concat(value))
-				}
-				ref="autocomplete"
-			/>
-		);
+const AutocompleteList = (props) => {
+	const autocomplete = (
+		<Autocomplete
+			{...props}
+			onChange={(value) =>
+				props.onChange(props.values.concat(value))
+			}
+		/>
+	);
 
-		const list = (
-			<List
-				{...this.props}
-				mutable
-				onChange={(values) => this.props.onChange(values)}
-			/>
-		);
+	const list = (
+		<List
+			{...props}
+			mutable
+			onChange={(values) => props.onChange(values)}
+		/>
+	);
 
-		return (
-			<div className="hire-forms-autocomplete-list">
-				{this.props.renderListBeforeAutocomplete ? list : autocomplete}
-				{this.props.renderListBeforeAutocomplete ? autocomplete : list}
-			</div>
-		);
-	}
-}
+	return (
+		<div className="hire-forms-autocomplete-list">
+			{props.renderListBeforeAutocomplete ? list : autocomplete}
+			{props.renderListBeforeAutocomplete ? autocomplete : list}
+		</div>
+	);
+};
 
 AutocompleteList.defaultProps = {
 	options: [],
