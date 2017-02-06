@@ -5,7 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "bump": "hi-bump",
-    "start": "babel src/index.jsx -o build/index.js"
+    "start": "babel src/index.jsx -o build/index.js",
+    "watch": "babel src/index.jsx -o build/index.js -w"
   },
   "repository": {
     "type": "git",
