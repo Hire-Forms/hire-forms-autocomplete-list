@@ -1,3 +1,7 @@
+### v3.0.1	(2017/3/30 9:29)
+* Move to Typescript
+* Add npm run watch
+
 ### v3.0.0	(2017/2/3 16:42)
 * Don't use Browserify to build jsx
 
