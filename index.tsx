@@ -22,14 +22,10 @@ const list = (props) =>
 		onChange={(values) => props.onChange(values)}
 	/>;
 
-const AutocompleteList: React.Component = (props: IAutocompleteListProps) =>
+const AutocompleteList = (props: IAutocompleteListProps) =>
 	<div className="hire-forms-autocomplete-list">
 		{props.renderListBeforeAutocomplete ? list(props) : autocomplete(props)}
 		{props.renderListBeforeAutocomplete ? autocomplete(props) : list(props)}
 	</div>;
-
-AutocompleteList.defaultProps = {
-	renderListBeforeAutocomplete: false,
-};
 
 export default AutocompleteList;

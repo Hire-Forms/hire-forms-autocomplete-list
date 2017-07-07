@@ -1,8 +1,8 @@
 {
   "name": "hire-forms-autocomplete-list",
   "version": "3.0.1",
-  "description": "",
-  "main": "build/index.js",
+  "description": "Hire-Forms Autocomplete List",
+  "main": "index.js",
   "scripts": {
     "bump": "hi-bump",
     "start": "tsc",

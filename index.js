@@ -8,7 +8,4 @@ const list = (props) => React.createElement(hire_forms_list_1.default, Object.as
 const AutocompleteList = (props) => React.createElement("div", { className: "hire-forms-autocomplete-list" },
     props.renderListBeforeAutocomplete ? list(props) : autocomplete(props),
     props.renderListBeforeAutocomplete ? autocomplete(props) : list(props));
-AutocompleteList.defaultProps = {
-    renderListBeforeAutocomplete: false,
-};
 exports.default = AutocompleteList;
