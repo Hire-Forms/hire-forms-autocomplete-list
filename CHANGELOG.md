@@ -1,3 +1,6 @@
+### v3.0.2	(2017/7/7 15:54)
+* Clean up
+
 ### v3.0.1	(2017/3/30 9:29)
 * Move to Typescript
 * Add npm run watch
