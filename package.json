@@ -19,12 +19,12 @@
   },
   "homepage": "https://github.com/Hire-Forms/hire-forms-autocomplete-list",
   "devDependencies": {
+    "@types/react": "^16.0.0",
     "hi-bump": "^1.1.1",
-    "typescript": "^2.2.1"
+    "typescript": "^2.4.2"
   },
   "dependencies": {
-    "hire-forms-autocomplete": "^2.1.7",
-    "hire-forms-list": "^3.0.0",
-    "react": "^15.4.2"
+    "hire-forms-autocomplete": "^2.1.12",
+    "react": "^15.6.1"
   }
 }
